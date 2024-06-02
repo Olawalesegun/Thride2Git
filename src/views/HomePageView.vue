@@ -26,9 +26,9 @@
       </div>
       <section class="listCount">
         <span class="inRepo inRepo1">
-          <RouterLink to="/repos" v-if="firstPageData.status">
+          <router-link to="/repos" v-if="firstPageData.status">
             <h4>Repos</h4>
-          </RouterLink>
+          </router-link>
           <h4 v-else>Repos</h4>
           <h3>{{ firstPageData.reposCount }}</h3>
         </span>
@@ -165,9 +165,6 @@ const date = () => {
   return `${day}-${month}-${year}`;
 }
 
-// if (firstPageData.fetchedData != null) {
-//   provide('firstPageData', firstPageData);
-// }
 async function handleRepoListing() {
   try {
     await axios(`https://api.github.com/users/${firstPageData.urlEntered}/repos`)
